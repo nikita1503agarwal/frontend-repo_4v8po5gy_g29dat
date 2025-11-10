@@ -1,41 +1,49 @@
+import { Code, Palette, Rocket, Layers } from 'lucide-react';
+
 const services = [
   {
-    title: 'Web Apps',
-    desc: 'High-performance React apps with clean architecture and delightful UX.',
-    emoji: '🚀'
+    icon: Code,
+    title: 'Full-Stack Web Apps',
+    desc: 'Fast, scalable applications with modern stacks and clean architectures.'
   },
   {
-    title: '3D & Motion',
-    desc: 'Spline scenes, WebGL accents, and tasteful animations that feel alive.',
-    emoji: '✨'
+    icon: Palette,
+    title: 'Design & Brand Systems',
+    desc: 'Consistent, beautiful interfaces with accessible, responsive design.'
   },
   {
-    title: 'Brand Sites',
-    desc: 'Modern marketing sites that convert with speed, style, and clarity.',
-    emoji: '🎯'
+    icon: Layers,
+    title: '3D & Interactive UI',
+    desc: 'Spline, WebGL, and motion to build immersive, interactive experiences.'
   },
-]
+  {
+    icon: Rocket,
+    title: 'Launch & Growth',
+    desc: 'CI/CD, analytics, SEO, and performance tuning to ship with confidence.'
+  }
+];
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-20 bg-white">
+    <section id="services" className="relative bg-black text-white py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">What we do</h2>
-          <p className="mt-3 text-slate-600">Crafting interactive, scalable interfaces that push your product forward.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">What we do</h2>
+          <p className="mt-3 text-white/70">Solutions tailored for startups, studios, and forward-thinking teams.</p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <div key={s.title} className="group rounded-2xl border border-black/5 bg-gradient-to-b from-white to-slate-50 p-6 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] transition hover:shadow-lg">
-              <div className="text-3xl">{s.emoji}</div>
-              <h3 className="mt-3 text-xl font-semibold text-slate-900">{s.title}</h3>
-              <p className="mt-2 text-slate-600">{s.desc}</p>
-              <div className="mt-4 text-sm text-blue-600 opacity-0 group-hover:opacity-100 transition">Learn more →</div>
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="group rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-cyan-400/30 border border-white/10">
+                <Icon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="mt-4 font-semibold text-lg">{title}</h3>
+              <p className="mt-2 text-sm text-white/70">{desc}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

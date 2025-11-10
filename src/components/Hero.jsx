@@ -1,36 +1,35 @@
-import Spline from '@splinetool/react-spline'
+import Spline from '@splinetool/react-spline';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-[80vh] md:min-h-[88vh] w-full overflow-hidden bg-gradient-to-b from-white to-slate-50">
+    <section id="home" className="relative min-h-[90vh] w-full overflow-hidden bg-black">
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/7m4PRZ7kg6K1jPfF/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+      {/* Overlay gradients and content */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-10%,rgba(56,189,248,0.15),transparent_60%),radial-gradient(900px_500px_at_80%_10%,rgba(244,114,182,0.12),transparent_60%),radial-gradient(900px_500px_at_20%_20%,rgba(129,140,248,0.12),transparent_60%)]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-28">
-        <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 ring-1 ring-black/5 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            Live • Interactive 3D
-          </span>
-          <h1 className="mt-6 text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-            Modern web experiences for ambitious brands
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-3xl text-white">
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05]">
+            Building immersive digital experiences for the next era
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-slate-600">
-            BlueFoxCode Solutions blends engineering and design to craft playful, high-performing sites powered by 3D and motion.
+          <p className="mt-6 text-white/80 text-lg leading-relaxed max-w-2xl">
+            BlueFoxCode Solutions crafts high-performance websites, interactive 3D interfaces, and modern web apps. We blend design, engineering, and motion to bring ideas to life.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#contact" className="inline-flex items-center justify-center rounded-md bg-slate-900 px-6 py-3 text-white hover:bg-slate-800">
-              Start a project
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#services" className="rounded-full bg-white text-black px-5 py-3 text-sm font-medium hover:bg-white/90 transition">
+              Explore Services
             </a>
-            <a href="#work" className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-slate-900 ring-1 ring-black/10 hover:bg-slate-50">
-              See our work
+            <a href="#work" className="rounded-full border border-white/30 text-white px-5 py-3 text-sm font-medium hover:bg-white/10 transition">
+              See Our Work
             </a>
           </div>
         </div>
       </div>
+
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
     </section>
-  )
+  );
 }
